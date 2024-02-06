@@ -11,6 +11,7 @@ const cors = require("cors")
 const morgan = require("morgan")
 
 const ingredientsRouter = require("./routes/materials")
+const recipesRouter = require("./routes/recipes")
 
 ///////////////////////////////
 // MIDDLEWARE
@@ -26,6 +27,7 @@ app.use(morgan("dev"));
 
 app.get('/', (req, res) => res.send('Hello World!'));
 app.use("/ingredients", ingredientsRouter);
+app.use("/recipes", recipesRouter);
 
 
 ///////////////////////////////
